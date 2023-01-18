@@ -808,13 +808,13 @@ AC_ARG_WITH(
     [encoding_option="noenc"]
 )
 
-
+dnl# gcc behaviour changed with v10 from defaulting to -fcommon to fno-common, which prevented compiling unless -fcommon is added to flags for gcc
 
 dnl Checks for programs.
 AC_PROG_CC(gcc cc egcs)
 dnl AX_CFLAGS_WARN_ALL
 if test "x$GCC" = "xyes"; then
-    CFLAGS="$CFLAGS -Wall -fPIC"
+    CFLAGS="$CFLAGS -Wall -fPIC -fcommon"
 fi
 AC_PROG_MAKE_SET
 AC_PROG_INSTALL
