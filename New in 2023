@@ -1,0 +1,7 @@
+According to https://gcc.gnu.org/bugzilla/show_bug.cgi?id=85678, a switch was made such that gcc in verisons 10 and up defaults to acting as if the -fno-common flag was provided. Versions 9 and earlier default to acting as if -fcommon was given.
+
+This change breaks compilation of mrxvt.
+
+This fork of the code simply adds '-fcommon' to the configure.ac file to fix this issue.
+
+Darren, 19 January 2023
