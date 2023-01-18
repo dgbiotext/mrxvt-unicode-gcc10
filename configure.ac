@@ -25,7 +25,7 @@ dnl#
 dnl 2006-02-20 gi1242: If the version contains a letter, then it sometimes
 dnl produces spurious results when programs use an escape sequence to query the
 dnl terminal version.
-AC_INIT(mrxvt, 0.5.5, [jimmyzhou@users.sourceforge.net])
+AC_INIT([mrxvt],[0.5.5],[jimmyzhou@users.sourceforge.net])
 AM_INIT_AUTOMAKE(mrxvt, 0.5.5)
 
 AM_CONFIG_HEADER(config.h)
@@ -170,7 +170,7 @@ support_old_selection=no
 
 AC_ARG_ENABLE(
     everything,
-    AC_HELP_STRING([--enable-everything],[enable all options [[no]]]),
+    AS_HELP_STRING([--enable-everything],[enable all options [[no]]]),
     [support_everything=$enableval],
     [support_everything=no]
 )
@@ -225,7 +225,7 @@ fi
 
 AC_ARG_ENABLE(
     minimal,
-    AC_HELP_STRING([--enable-minimal],[enable minimal options [[no]]]),
+    AS_HELP_STRING([--enable-minimal],[enable minimal options [[no]]]),
     [support_minimal=$enableval],
     [support_minimal=no]
 )
@@ -281,7 +281,7 @@ fi
 
 AC_ARG_ENABLE(
     debug,
-    AC_HELP_STRING([--enable-debug],[enable debug mode - for developper [[no]]]),
+    AS_HELP_STRING([--enable-debug],[enable debug mode - for developper [[no]]]),
     [support_debug=$enableval]
 )
 if test "x$support_debug" = "xyes"; then
@@ -294,7 +294,7 @@ fi
 
 AC_ARG_ENABLE(
     ourstrings,
-    AC_HELP_STRING([--enable-ourstrings],[enable our strings functions [[no]]]),
+    AS_HELP_STRING([--enable-ourstrings],[enable our strings functions [[no]]]),
     [support_ourstrings=$enableval]
 )
 if test "x$support_ourstrings" = "xyes"; then
@@ -304,7 +304,7 @@ fi
 
 AC_ARG_ENABLE(
     frills,
-    AC_HELP_STRING([--enable-frills],[enable internal borders / smart resizing [[yes]]]),
+    AS_HELP_STRING([--enable-frills],[enable internal borders / smart resizing [[yes]]]),
     [support_frills=$enableval]
 )
 if test "x$support_frills" != "xyes"; then
@@ -314,7 +314,7 @@ fi
 
 AC_ARG_ENABLE(
     keepscrolling,
-    AC_HELP_STRING([--enable-keepscrolling],[enable continual scrolling on scrollbar arrow press [[yes]]]),
+    AS_HELP_STRING([--enable-keepscrolling],[enable continual scrolling on scrollbar arrow press [[yes]]]),
     [support_keepscrolling=$enableval]
 )
 if test "x$support_keepscrolling" != "xyes"; then
@@ -324,7 +324,7 @@ fi
 
 AC_ARG_ENABLE(
     selectionscrolling,
-    AC_HELP_STRING([--enable-selectionscrolling],[enable continual scrolling on selection [[yes]]]),
+    AS_HELP_STRING([--enable-selectionscrolling],[enable continual scrolling on selection [[yes]]]),
     [support_selectionscrolling=$enableval]
 )
 if test "x$support_selectionscrolling" = "xyes"; then
@@ -334,7 +334,7 @@ fi
 
 AC_ARG_ENABLE(
     mousewheel,
-    AC_HELP_STRING([--enable-mousewheel],[enable scrolling via mouse wheel or buttons 4 & 5 [[yes]]]),
+    AS_HELP_STRING([--enable-mousewheel],[enable scrolling via mouse wheel or buttons 4 & 5 [[yes]]]),
     [support_mousewheel=$enableval]
 )
 if test "x$support_mousewheel" = "xyes"; then
@@ -344,7 +344,7 @@ fi
 
 AC_ARG_ENABLE(
     mouseslipwheel,
-    AC_HELP_STRING([--enable-mouseslipwheel],[enable slip scrolling via mouse wheel or buttons 4 & 5 [[no]]]),
+    AS_HELP_STRING([--enable-mouseslipwheel],[enable slip scrolling via mouse wheel or buttons 4 & 5 [[no]]]),
     [support_mouseslipwheel=$enableval]
 )
 if test "x$support_mousewheel x$support_mouseslipwheel" = "xyes xyes"; then
@@ -354,7 +354,7 @@ fi
 
 AC_ARG_ENABLE(
     rxvt-scroll,
-    AC_HELP_STRING([--enable-rxvt-scroll],[enable rxvt style scrollbar [[yes]]]),
+    AS_HELP_STRING([--enable-rxvt-scroll],[enable rxvt style scrollbar [[yes]]]),
     [support_scroll_rxvt=$enableval]
 )
 if test "x$support_scroll_rxvt" = "xyes"; then
@@ -366,7 +366,7 @@ fi
 
 AC_ARG_ENABLE(
     next-scroll,
-    AC_HELP_STRING([--enable-next-scroll],[enable NeXT style scrollbar [[yes]]]),
+    AS_HELP_STRING([--enable-next-scroll],[enable NeXT style scrollbar [[yes]]]),
     [support_scroll_next=$enableval]
 )
 if test "x$support_scroll_next" = "xyes"; then
@@ -378,7 +378,7 @@ fi
 
 AC_ARG_ENABLE(
     xterm-scroll,
-    AC_HELP_STRING([--enable-xterm-scroll],[enable Xterm style scrollbar [[yes]]]),
+    AS_HELP_STRING([--enable-xterm-scroll],[enable Xterm style scrollbar [[yes]]]),
     [support_scroll_xterm=$enableval]
 )
 if test "x$support_scroll_xterm" = "xyes"; then
@@ -390,7 +390,7 @@ fi
 
 AC_ARG_ENABLE(
     plain-scroll,
-    AC_HELP_STRING([--enable-plain-scroll],[enable plain style scrollbar [[yes]]]),
+    AS_HELP_STRING([--enable-plain-scroll],[enable plain style scrollbar [[yes]]]),
     [support_scroll_plain=$enableval]
 )
 if test "x$support_scroll_plain" = "xyes"; then
@@ -402,7 +402,7 @@ fi
 
 AC_ARG_ENABLE(
     sgi-scroll,
-    AC_HELP_STRING([--enable-sgi-scroll],[enable SGI IRIX style scrollbar [[yes]]]),
+    AS_HELP_STRING([--enable-sgi-scroll],[enable SGI IRIX style scrollbar [[yes]]]),
     [support_scroll_sgi=$enableval]
 )
 if test "x$support_scroll_sgi" = "xyes"; then
@@ -422,7 +422,7 @@ AM_CONDITIONAL(SGI_SCROLLBAR, test "x$support_scroll_sgi" = "xyes")
 
 AC_ARG_ENABLE(
     half-shadow,
-    AC_HELP_STRING([--enable-half-shadow],[enable half width/height shadow on rxvt scrollbar [[yes]]]),
+    AS_HELP_STRING([--enable-half-shadow],[enable half width/height shadow on rxvt scrollbar [[yes]]]),
     [support_half_shadow=$enableval]
 )
 if test "x$support_scroll_rxvt x$support_half_shadow" = "xyes xyes"; then
@@ -432,7 +432,7 @@ fi
 
 AC_ARG_ENABLE(
     utmp,
-    AC_HELP_STRING([--enable-utmp],[enable utmp/utmpx support [[yes]]]),
+    AS_HELP_STRING([--enable-utmp],[enable utmp/utmpx support [[yes]]]),
     [support_utmp=$enableval]
 )
 if test "x$support_utmp" = "xyes"; then
@@ -442,7 +442,7 @@ fi
 
 AC_ARG_ENABLE(
     wtmp,
-    AC_HELP_STRING([--enable-wtmp],[enable wtmp support (need utmp support) [[yes]]]),
+    AS_HELP_STRING([--enable-wtmp],[enable wtmp support (need utmp support) [[yes]]]),
     [support_wtmp=$enableval]
 )
 dnl depends on utmp support
@@ -453,7 +453,7 @@ fi
 
 AC_ARG_ENABLE(
     lastlog,
-    AC_HELP_STRING([--enable-lastlog],[enable lastlog support [[yes]]]),
+    AS_HELP_STRING([--enable-lastlog],[enable lastlog support [[yes]]]),
     [support_lastlog=$enableval]
 )
 dnl depends on utmp support
@@ -465,21 +465,21 @@ AM_CONDITIONAL(UTMP_SUPPORT, test "x$support_utmp" = "xyes")
 
 AC_ARG_ENABLE(
     sessionmgr,
-    AC_HELP_STRING([--enable-sessionmgr],[enable X session manager [[yes]]]),
+    AS_HELP_STRING([--enable-sessionmgr],[enable X session manager [[yes]]]),
     [support_sessionmgr=$enableval],
 )
 
 
 AC_ARG_ENABLE(
     utempter,
-    AC_HELP_STRING([--enable-utempter],[enable utempter library for utmp/wtmp/lastlog [[no]]]),
+    AS_HELP_STRING([--enable-utempter],[enable utempter library for utmp/wtmp/lastlog [[no]]]),
     [support_utempter=$enableval],
 )
 
 
 AC_ARG_ENABLE(
     linespace,
-    AC_HELP_STRING([--enable-linespace],[enable linespace support [[yes]]]),
+    AS_HELP_STRING([--enable-linespace],[enable linespace support [[yes]]]),
     [support_linespace=$enableval]
 )
 if test "x$support_linespace" != "xyes"; then
@@ -489,7 +489,7 @@ fi
 
 AC_ARG_ENABLE(
     24bits,
-    AC_HELP_STRING([--enable-24bits],[prefer 24 bits color [[no]]]),
+    AS_HELP_STRING([--enable-24bits],[prefer 24 bits color [[no]]]),
     [support_24bits=$enableval]
 )
 if test "x$support_24bits" = "xyes"; then
@@ -499,7 +499,7 @@ fi
 
 AC_ARG_ENABLE(
     256colors,
-    AC_HELP_STRING([--enable-256colors],[use 256 color [[yes]]]),
+    AS_HELP_STRING([--enable-256colors],[use 256 color [[yes]]]),
     [support_256colors=$enableval]
 )
 if test "x$support_256colors" = "xyes"; then
@@ -509,7 +509,7 @@ fi
 
 AC_ARG_ENABLE(
     cursor-blink,
-    AC_HELP_STRING([--enable-cursor-blink],[enable cursor blinking [[yes]]]),
+    AS_HELP_STRING([--enable-cursor-blink],[enable cursor blinking [[yes]]]),
     [support_cursor_blink=$enableval]
 )
 if test "x$support_cursor_blink" = "xyes"; then
@@ -519,7 +519,7 @@ fi
 
 AC_ARG_ENABLE(
     pointer-blank,
-    AC_HELP_STRING([--enable-pointer-blank],[enable blank pointer [[yes]]]),
+    AS_HELP_STRING([--enable-pointer-blank],[enable blank pointer [[yes]]]),
     [support_pointer_blank=$enableval]
 )
 if test "x$support_pointer_blank" = "xyes"; then
@@ -529,7 +529,7 @@ fi
 
 AC_ARG_ENABLE(
     text-shadow,
-    AC_HELP_STRING([--enable-text-shadow],[enable colors shadow for text [[no]]]),
+    AS_HELP_STRING([--enable-text-shadow],[enable colors shadow for text [[no]]]),
     [support_text_shadow=$enableval]
 )
 if test "x$support_text_shadow" = "xyes"; then
@@ -540,7 +540,7 @@ fi
 dnl# Make an option instead of a feature
 dnl# AC_ARG_ENABLE(
 dnl#     smart-resize,
-dnl#     AC_HELP_STRING([--enable-smart-resize],[enable smart resizing [[no]]]),
+dnl#     AS_HELP_STRING([--enable-smart-resize],[enable smart resizing [[no]]]),
 dnl#     [support_smart_resize=$enableval]
 dnl# )
 dnl# if test "x$support_smart_resize" = "xyes"; then
@@ -550,7 +550,7 @@ dnl# fi
 
 AC_ARG_ENABLE(
     menubar,
-    AC_HELP_STRING([--enable-menubar],[enable menu bar [[no]]]),
+    AS_HELP_STRING([--enable-menubar],[enable menu bar [[no]]]),
     [support_menubar=$enableval]
 )
 if test "x$support_menubar" = "xyes"; then
@@ -560,7 +560,7 @@ fi
 
 AC_ARG_ENABLE(
     transparency,
-    AC_HELP_STRING([--enable-transparency],[enable transparent background [[yes]]]),
+    AS_HELP_STRING([--enable-transparency],[enable transparent background [[yes]]]),
     [support_transparency=$enableval]
 )
 if test "x$support_transparency" = "xyes"; then
@@ -573,7 +573,7 @@ dnl: enabled. 2006-09-14 gi1242.
 dnl:
 dnl: AC_ARG_ENABLE(
 dnl:     fading,
-dnl:     AC_HELP_STRING([--enable-fading],[enable colors fading when off focus [[yes]]]),
+dnl:     AS_HELP_STRING([--enable-fading],[enable colors fading when off focus [[yes]]]),
 dnl:     [support_fading=$enableval]
 dnl: )
 dnl: if test "x$support_fading" = "xyes"; then
@@ -583,55 +583,55 @@ dnl: fi
 
 AC_ARG_ENABLE(
     tinting,
-    AC_HELP_STRING([--enable-tinting],[enable colors tinting [[yes]]]),
+    AS_HELP_STRING([--enable-tinting],[enable colors tinting [[yes]]]),
     [support_tinting=$enableval]
 )
 
 AC_ARG_ENABLE(
     xrender,
-    AC_HELP_STRING([--enable-xrender],[tint using XRender (slower but nicer results) [[yes]]]),
+    AS_HELP_STRING([--enable-xrender],[tint using XRender (slower but nicer results) [[yes]]]),
     [support_xrender=$enableval]
 )
 
 
 AC_ARG_ENABLE(
     xpm,
-    AC_HELP_STRING([--enable-xpm],[enable XPM background pixmaps [[yes]]]),
+    AS_HELP_STRING([--enable-xpm],[enable XPM background pixmaps [[yes]]]),
     [support_xpm=$enableval],
 )
 
 
 AC_ARG_ENABLE(
     jpeg,
-    AC_HELP_STRING([--enable-jpeg],[enable JPEG background pixmaps [[yes]]]),
+    AS_HELP_STRING([--enable-jpeg],[enable JPEG background pixmaps [[yes]]]),
     [support_jpeg=$enableval],
 )
 
 
 AC_ARG_ENABLE(
     png,
-    AC_HELP_STRING([--enable-png],[enable PNG background pixmaps [[yes]]]),
+    AS_HELP_STRING([--enable-png],[enable PNG background pixmaps [[yes]]]),
     [support_png=$enableval],
 )
 
 
 AC_ARG_ENABLE(
     xft,
-    AC_HELP_STRING([--enable-xft],[enable freetype font support [[no]]]),
+    AS_HELP_STRING([--enable-xft],[enable freetype font support [[no]]]),
     [support_xft=$enableval]
 )
 
 
 dnl AC_ARG_ENABLE(
 dnl    xim,
-dnl    AC_HELP_STRING([--enable-xim],[enable XIM support [[no]]]),
+dnl    AS_HELP_STRING([--enable-xim],[enable XIM support [[no]]]),
 dnl    [support_xim=$enableval]
 dnl )
 
 
 AC_ARG_ENABLE(
     greek,
-    AC_HELP_STRING([--enable-greek],[enable Greek keyboard support [[no]]]),
+    AS_HELP_STRING([--enable-greek],[enable Greek keyboard support [[no]]]),
     [support_greek=$enableval]
 )
 if test "x$support_greek" = "xyes"; then
@@ -642,14 +642,14 @@ AM_CONDITIONAL(GREEK, test "x$support_greek" = "xyes")
 
 AC_ARG_ENABLE(
     cjk,
-    AC_HELP_STRING([--enable-cjk],[enable CJK multichar language support [[no]]]),
+    AS_HELP_STRING([--enable-cjk],[enable CJK multichar language support [[no]]]),
     [support_cjk=$enableval]
 )
 
 
 AC_ARG_ENABLE(
     ttygid,
-    AC_HELP_STRING([--enable-ttygid],[enable ttygid to group tty [[yes]]]),
+    AS_HELP_STRING([--enable-ttygid],[enable ttygid to group tty [[yes]]]),
     [support_ttygid=$enableval]
 )
 if test "x$support_ttygid" = "xyes"; then
@@ -659,7 +659,7 @@ fi
 
 AC_ARG_ENABLE(
     backspace-key,
-    AC_HELP_STRING([--enable-backspace-key],[enable handling of the backspace key [[yes]]]),
+    AS_HELP_STRING([--enable-backspace-key],[enable handling of the backspace key [[yes]]]),
     [support_backspace_key=$enableval]
 )
 if test "x$support_backspace_key" != "xyes"; then
@@ -669,7 +669,7 @@ fi
 
 AC_ARG_ENABLE(
     delete-key,
-    AC_HELP_STRING([--enable-delete-key],[enable handling of the delete key [[yes]]]),
+    AS_HELP_STRING([--enable-delete-key],[enable handling of the delete key [[yes]]]),
     [support_delete_key=$enableval]
 )
 if test "x$support_delete_key" != "xyes"; then
@@ -678,7 +678,7 @@ fi
 
 AC_ARG_ENABLE(
     use-fifo,
-    AC_HELP_STRING([--enable-use-fifo],[Enable listening for macros on a fifo [[yes]]]),
+    AS_HELP_STRING([--enable-use-fifo],[Enable listening for macros on a fifo [[yes]]]),
     [use_fifo=$enableval]
 )
 if test "x$use_fifo" = "xyes"; then
@@ -688,7 +688,7 @@ fi
 
 AC_ARG_ENABLE(
     resources,
-    AC_HELP_STRING([--enable-resources],[enable all resource checking [[yes]]]),
+    AS_HELP_STRING([--enable-resources],[enable all resource checking [[yes]]]),
     [support_resources=$enableval]
 )
 if test "x$support_resources" != "xyes"; then
@@ -698,7 +698,7 @@ fi
 
 AC_ARG_ENABLE(
     swapscreen,
-    AC_HELP_STRING([--enable-swapscreen],[enable swap screen support [[yes]]]),
+    AS_HELP_STRING([--enable-swapscreen],[enable swap screen support [[yes]]]),
     [support_swapscreen=$enableval]
 )
 if test "x$support_swapscreen" != "xyes"; then
@@ -708,7 +708,7 @@ fi
 
 AC_ARG_ENABLE(
     old-selection,
-    AC_HELP_STRING([--enable-old-selection],[enable old mouse selection code [[no]]]),
+    AS_HELP_STRING([--enable-old-selection],[enable old mouse selection code [[no]]]),
     [support_old_selection=$enableval]
 )
 if test "x$support_old_selection" = "xyes"; then
@@ -720,7 +720,7 @@ fi
 
 AC_ARG_WITH(
     term,
-    AC_HELP_STRING([--with-term=NAME],[set the terminal to NAME [[rxvt]]]),
+    AS_HELP_STRING([--with-term=NAME],[set the terminal to NAME [[rxvt]]]),
     [term_name_option=$withval],
     [term_name_option=rxvt]
 )
@@ -729,7 +729,7 @@ AC_DEFINE_UNQUOTED(TERMENV, "$term_name_option", [default TERM name])
 
 AC_ARG_WITH(
     line-space,
-    AC_HELP_STRING([--with-line-space=NUM],[set the space between lines [[0]]]),
+    AS_HELP_STRING([--with-line-space=NUM],[set the space between lines [[0]]]),
     [line_space_option=$withval],
     [line_space_option=0]
 )
@@ -738,7 +738,7 @@ AC_DEFINE_UNQUOTED(LINESPACE, $line_space_option, [the space between lines])
 
 AC_ARG_WITH(
     int-border,
-    AC_HELP_STRING([--with-int-border=NUM],[set the width of internal border, frills option must be enabled [[0]]]),
+    AS_HELP_STRING([--with-int-border=NUM],[set the width of internal border, frills option must be enabled [[0]]]),
     [int_border_option=$withval],
     [int_border_option=0]
 )
@@ -747,7 +747,7 @@ AC_DEFINE_UNQUOTED(INTERNALBORDERWIDTH, $int_border_option, [the width of intern
 
 AC_ARG_WITH(
     ext-border,
-    AC_HELP_STRING([--with-ext-border=NUM],[set the width of external border, frills option must be enabled [[0]]]),
+    AS_HELP_STRING([--with-ext-border=NUM],[set the width of external border, frills option must be enabled [[0]]]),
     [ext_border_option=$withval],
     [ext_border_option=0]
 )
@@ -756,7 +756,7 @@ AC_DEFINE_UNQUOTED(EXTERNALBORDERWIDTH, $ext_border_option, [the width of extern
 
 AC_ARG_WITH(
     save-lines,
-    AC_HELP_STRING([--with-save-lines=NUM],[set the lines to save in scroll [[100]]]),
+    AS_HELP_STRING([--with-save-lines=NUM],[set the lines to save in scroll [[100]]]),
     [save_lines_option=$withval],
     [save_lines_option=100]
 )
@@ -765,7 +765,7 @@ AC_DEFINE_UNQUOTED(SAVELINES, $save_lines_option, [the lines to save in scroll])
 
 AC_ARG_WITH(
     max-profiles,
-    AC_HELP_STRING([--with-max-profiles=NUM],[set the max number of terminal [[5]]]),
+    AS_HELP_STRING([--with-max-profiles=NUM],[set the max number of terminal [[5]]]),
     [max_prof_option=$withval],
     [max_prof_option=5]
 )
@@ -774,7 +774,7 @@ AC_DEFINE_UNQUOTED(MAX_PROFILES, $max_prof_option, [the max number of profiles])
 
 AC_ARG_WITH(
 	atab-extra,
-	AC_HELP_STRING( [--with-atab-extra=%], [The extra height (as a % of the font height) active tabs should have] ),
+	AS_HELP_STRING([--with-atab-extra=%],[The extra height (as a % of the font height) active tabs should have ]),
 	[atab_extra_option=$withval],
 	[atab_extra_option=20]
 )
@@ -782,7 +782,7 @@ AC_DEFINE_UNQUOTED( ATAB_EXTRA_PERCENT, $atab_extra_option, [The extra height (a
 
 AC_ARG_WITH(
 	tab-radius,
-	AC_HELP_STRING( [--with-tab-radius=%], [The radius (as a % of the font X offset) of tab corners]),
+	AS_HELP_STRING([--with-tab-radius=%],[The radius (as a % of the font X offset) of tab corners]),
 	[tab_radius_option=$withval],
 	[tab_radius_option=100],
 )
@@ -792,7 +792,7 @@ AC_DEFINE_UNQUOTED( TAB_RADIUS_PERCENT, $tab_radius_option, [The radius (as a % 
 withval=""
 AC_ARG_WITH(
     terminfo,
-    AC_HELP_STRING([--with-terminfo=PATH],[set the path to the terminfo tree to PATH]),
+    AS_HELP_STRING([--with-terminfo=PATH],[set the path to the terminfo tree to PATH]),
     [terminfo_option=$withval],
     [terminfo_option="/usr/share/terminfo"]
 )
@@ -803,7 +803,7 @@ fi
 
 AC_ARG_WITH(
     encoding,
-    AC_HELP_STRING([--with-encoding=NAME],[set language default encoding (eucj|sjis|big5|gb|gbk|kr|noenc) to NAME (default is noenc)]),
+    AS_HELP_STRING([--with-encoding=NAME],[set language default encoding (eucj|sjis|big5|gb|gbk|kr|noenc) to NAME (default is noenc)]),
     [encoding_option=$withval],
     [encoding_option="noenc"]
 )
@@ -1061,7 +1061,15 @@ fi
 
 
 
-AC_HEADER_STDC
+m4_warn([obsolete],
+[The preprocessor macro `STDC_HEADERS' is obsolete.
+  Except in unusual embedded environments, you can safely include all
+  ISO C90 headers unconditionally.])dnl
+# Autoupdate added the next two lines to ensure that your configure
+# script's behavior did not change.  They are probably safe to remove.
+AC_CHECK_INCLUDES_DEFAULT
+AC_PROG_EGREP
+
 AC_HEADER_SYS_WAIT
 
 AC_CHECK_HEADERS([stdlib.h], [], [],
@@ -1152,7 +1160,20 @@ AC_CHECK_HEADERS([net/if_arp.h], [], [],
 dnl Checks for typedefs, structures, and compiler characteristics.
 AC_C_CONST
 AC_C_INLINE
-AC_HEADER_TIME
+m4_warn([obsolete],
+[Update your code to rely only on HAVE_SYS_TIME_H,
+then remove this warning and the obsolete code below it.
+All current systems provide time.h; it need not be checked for.
+Not all systems provide sys/time.h, but those that do, all allow
+you to include it and time.h simultaneously.])dnl
+AC_CHECK_HEADERS_ONCE([sys/time.h])
+# Obsolete code to be removed.
+if test $ac_cv_header_sys_time_h = yes; then
+  AC_DEFINE([TIME_WITH_SYS_TIME],[1],[Define to 1 if you can safely include both <sys/time.h>
+	     and <time.h>.  This macro is obsolete.])
+fi
+# End of obsolete code.
+
 
 
 AC_STRUCT_TM
@@ -1160,7 +1181,19 @@ AC_STRUCT_TM
 AC_TYPE_MODE_T
 AC_TYPE_UID_T
 AC_TYPE_PID_T
-AC_TYPE_SIGNAL
+m4_warn([obsolete],
+[your code may safely assume C89 semantics that RETSIGTYPE is void.
+Remove this warning and the `AC_CACHE_CHECK' when you adjust the code.])dnl
+AC_CACHE_CHECK([return type of signal handlers],[ac_cv_type_signal],[AC_COMPILE_IFELSE(
+[AC_LANG_PROGRAM([#include <sys/types.h>
+#include <signal.h>
+],
+		 [return *(signal (0, 0)) (0) == 1;])],
+		   [ac_cv_type_signal=int],
+		   [ac_cv_type_signal=void])])
+AC_DEFINE_UNQUOTED([RETSIGTYPE],[$ac_cv_type_signal],[Define as the return type of signal handlers
+		    (`int' or `void').])
+
 
 
 AC_CACHE_CHECK(for working nl_langinfo, rxvt_cv_func_nl_langinfo,
@@ -1170,8 +1203,7 @@ if test "x$rxvt_cv_func_nl_langinfo" = "xyes"; then
 fi
 
 AC_CACHE_CHECK([for XPointer], rxvt_cv_xpointer,
-[AC_TRY_COMPILE([#include <X11/Xlib.h>], [XPointer dummy;],
-rxvt_cv_xpointer=yes, rxvt_cv_xpointer=no)])
+[AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[#include <X11/Xlib.h>]], [[XPointer dummy;]])],[rxvt_cv_xpointer=yes],[rxvt_cv_xpointer=no])])
 if test "x$rxvt_cv_xpointer" = "xyes"; then
   AC_DEFINE(HAVE_XPOINTER, 1, Define if you have XPointer typedef)
 fi
@@ -1179,55 +1211,43 @@ fi
 
 if test "x$support_utmp" = "xyes"; then
     AC_CACHE_CHECK([for struct utmp], rxvt_cv_struct_utmp,
-        [AC_TRY_COMPILE([#include <sys/types.h>
-        #include <utmp.h>],
-        [struct utmp ut;],
-        rxvt_cv_struct_utmp=yes, rxvt_cv_struct_utmp=no)])
+        [AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[#include <sys/types.h>
+        #include <utmp.h>]], [[struct utmp ut;]])],[rxvt_cv_struct_utmp=yes],[rxvt_cv_struct_utmp=no])])
     if test "x$rxvt_cv_struct_utmp" = "xyes"; then
         AC_DEFINE(HAVE_STRUCT_UTMP, 1, Define if utmp.h has struct utmp)
     fi
 
     AC_CACHE_CHECK(for ut_host in utmp struct, rxvt_cv_struct_utmp_host,
-        [AC_TRY_COMPILE([#include <sys/types.h>
-        #include <utmp.h>],
-        [struct utmp ut; ut.ut_host;],
-        rxvt_cv_struct_utmp_host=yes, rxvt_cv_struct_utmp_host=no)])
+        [AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[#include <sys/types.h>
+        #include <utmp.h>]], [[struct utmp ut; ut.ut_host;]])],[rxvt_cv_struct_utmp_host=yes],[rxvt_cv_struct_utmp_host=no])])
     if test "x$rxvt_cv_struct_utmp_host" = "xyes"; then
         AC_DEFINE(HAVE_UTMP_HOST, 1, Define if struct utmp contains ut_host)
     fi
 
     AC_CACHE_CHECK(for ut_pid in utmp struct, rxvt_cv_struct_utmp_pid,
-        [AC_TRY_COMPILE([#include <sys/types.h>
-        #include <utmp.h>],
-        [struct utmp ut; ut.ut_pid;],
-        rxvt_cv_struct_utmp_pid=yes, rxvt_cv_struct_utmp_pid=no)])
+        [AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[#include <sys/types.h>
+        #include <utmp.h>]], [[struct utmp ut; ut.ut_pid;]])],[rxvt_cv_struct_utmp_pid=yes],[rxvt_cv_struct_utmp_pid=no])])
     if test "x$rxvt_cv_struct_utmp_pid" = "xyes"; then
         AC_DEFINE(HAVE_UTMP_PID, 1, Define if struct utmp contains ut_pid)
     fi
 
     AC_CACHE_CHECK([for struct utmpx], rxvt_cv_struct_utmpx,
-        [AC_TRY_COMPILE([#include <sys/types.h>
-        #include <utmpx.h>],
-        [struct utmpx ut;],
-        rxvt_cv_struct_utmpx=yes, rxvt_cv_struct_utmpx=no)])
+        [AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[#include <sys/types.h>
+        #include <utmpx.h>]], [[struct utmpx ut;]])],[rxvt_cv_struct_utmpx=yes],[rxvt_cv_struct_utmpx=no])])
     if test "x$rxvt_cv_struct_utmpx" = "xyes"; then
         AC_DEFINE(HAVE_STRUCT_UTMPX, 1, Define if utmpx.h has struct utmpx)
     fi
 
     AC_CACHE_CHECK(for ut_host in utmpx struct, rxvt_cv_struct_utmpx_host,
-        [AC_TRY_COMPILE([#include <sys/types.h>
-        #include <utmpx.h>],
-        [struct utmpx utx; utx.ut_host;],
-        rxvt_cv_struct_utmpx_host=yes, rxvt_cv_struct_utmpx_host=no)])
+        [AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[#include <sys/types.h>
+        #include <utmpx.h>]], [[struct utmpx utx; utx.ut_host;]])],[rxvt_cv_struct_utmpx_host=yes],[rxvt_cv_struct_utmpx_host=no])])
     if test "x$rxvt_cv_struct_utmpx_host" = "xyes"; then
         AC_DEFINE(HAVE_UTMPX_HOST, 1, Define if struct utmpx contains ut_host)
     fi
 
     AC_CACHE_CHECK(for ut_session in utmpx struct, rxvt_cv_struct_utmpx_session,
-        [AC_TRY_COMPILE([#include <sys/types.h>
-        #include <utmpx.h>],
-        [struct utmpx utx; utx.ut_session;],
-        rxvt_cv_struct_utmpx_session=yes, rxvt_cv_struct_utmpx_session=no)])
+        [AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[#include <sys/types.h>
+        #include <utmpx.h>]], [[struct utmpx utx; utx.ut_session;]])],[rxvt_cv_struct_utmpx_session=yes],[rxvt_cv_struct_utmpx_session=no])])
     if test "x$rxvt_cv_struct_utmpx_session" = "xyes"; then
         AC_DEFINE(HAVE_UTMPX_SESSION, 1, Define if struct utmpx contains ut_session)
     fi
@@ -1236,14 +1256,12 @@ fi
 
 if test "x$support_utmp x$support_lastlog" = "xyes xyes"; then
     AC_CACHE_CHECK(for struct lastlog, rxvt_cv_struct_lastlog,
-        [AC_TRY_COMPILE([#include <sys/types.h>
+        [AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[#include <sys/types.h>
         #include <utmp.h>
         #ifdef HAVE_LASTLOG_H
         #include <lastlog.h>
         #endif
-        ],
-        [struct lastlog ll;],
-        rxvt_cv_struct_lastlog=yes, rxvt_cv_struct_lastlog=no)])
+        ]], [[struct lastlog ll;]])],[rxvt_cv_struct_lastlog=yes],[rxvt_cv_struct_lastlog=no])])
     if test "x$rxvt_cv_struct_lastlog" = "xyes"; then
         AC_DEFINE(HAVE_STRUCT_LASTLOG, 1, Define if utmp.h or lastlog.h has struct lastlog)
     fi
@@ -1434,7 +1452,7 @@ if test "x$rxvt_cv_ptys" = "xBSD" -o "x$rxvt_cv_ptys" = "xHPUX" -o "x$rxvt_cv_pt
   AC_DEFINE(PTYS_ARE_SEARCHED, 1, Define for this pty type)
 fi
 
-AC_CHECKING(for pty ranges)
+AS_MESSAGE([checking for pty ranges...])
 ptys=`echo /dev/pty??`
 pch1=`echo $ptys | tr ' ' '\012' | sed -e 's/^.*\(.\).$/\1/g' | sort -u | tr -d '\012'`
 pch2=`echo $ptys | tr ' ' '\012' | sed -e 's/^.*\(.\)$/\1/g' | sort -u | tr -d '\012'`
