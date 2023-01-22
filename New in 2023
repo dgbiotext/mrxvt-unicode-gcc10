@@ -4,4 +4,10 @@ This change breaks compilation of mrxvt.
 
 This fork of the code simply adds '-fcommon' to the configure.ac file to fix this issue.
 
-Darren, 19 January 2023
+Build dependencies are mostly listed in the  usual mrxvt documentation, but extras will increase capability; on Debian, for example, I would suggest 
+
+sudo apt install libx11-dev libxft-dev libxpm-dev libjpeg9-dev bison
+
+Also, the bootstrap does not just need autoconf, it also needs bison if it is to work. That's on top of your build-essential stuff (like a compiler!). That's why I've listed it above.
+
+Darren, 22 January 2023
